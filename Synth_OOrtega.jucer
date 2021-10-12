@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="OFdA5m" name="Synth_OOrtega" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
+              pluginManufacturer="Oscar Ortega" pluginManufacturerCode="OO"
+              pluginCode="SYNO">
+  <MAINGROUP id="K7Y63K" name="Synth_OOrtega">
+    <GROUP id="{2375E65B-A9B0-803E-16C8-B15DCC43B9DA}" name="Source">
+      <FILE id="mn68gS" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="nX94Bl" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="r6O8S4" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="xleJq8" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="wusXNg" name="SynthVoice.cpp" compile="1" resource="0" file="Source/SynthVoice.cpp"/>
+      <FILE id="LVpH7E" name="SynthVoice.h" compile="0" resource="0" file="Source/SynthVoice.h"/>
+      <FILE id="ZMVvwf" name="SynthSound.cpp" compile="1" resource="0" file="Source/SynthSound.cpp"/>
+      <FILE id="CJIoiV" name="SynthSound.h" compile="0" resource="0" file="Source/SynthSound.h"/>
+    </GROUP>
+    <GROUP id="{10BFD785-697A-E46B-2E57-C8065E947582}" name="View">
+      <FILE id="eneMgV" name="ADSRComponent.cpp" compile="1" resource="0"
+            file="Source/View/ADSRComponent.cpp"/>
+      <FILE id="bOYlze" name="ADSRComponent.h" compile="0" resource="0" file="Source/View/ADSRComponent.h"/>
+      <FILE id="KzjPZf" name="FilterComponent.cpp" compile="1" resource="0"
+            file="Source/View/FilterComponent.cpp"/>
+      <FILE id="z4T7Ux" name="FilterComponent.h" compile="0" resource="0"
+            file="Source/View/FilterComponent.h"/>
+      <FILE id="g2Va0O" name="OscComponent.cpp" compile="1" resource="0"
+            file="Source/View/OscComponent.cpp"/>
+      <FILE id="gSCEih" name="OscComponent.h" compile="0" resource="0" file="Source/View/OscComponent.h"/>
+    </GROUP>
+    <GROUP id="{AFBD77BA-440F-692A-C884-EA66F250CFFE}" name="Controller">
+      <FILE id="httKRe" name="ADSRController.cpp" compile="1" resource="0"
+            file="Source/Controller/ADSRController.cpp"/>
+      <FILE id="xI0wpR" name="ADSRController.h" compile="0" resource="0"
+            file="Source/Controller/ADSRController.h"/>
+      <FILE id="cuHSWe" name="FilterController.cpp" compile="1" resource="0"
+            file="Source/Controller/FilterController.cpp"/>
+      <FILE id="B2ZJyq" name="FilterController.h" compile="0" resource="0"
+            file="Source/Controller/FilterController.h"/>
+      <FILE id="u1ulDO" name="OscController.cpp" compile="1" resource="0"
+            file="Source/Controller/OscController.cpp"/>
+      <FILE id="viKx7Q" name="OscController.h" compile="0" resource="0" file="Source/Controller/OscController.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Synth_OOrtega"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="Synth_OOrtega"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../Applications/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../../../../Applications/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>
