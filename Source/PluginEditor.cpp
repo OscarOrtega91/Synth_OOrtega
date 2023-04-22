@@ -19,6 +19,9 @@ Synth_OOrtegaAudioProcessorEditor::Synth_OOrtegaAudioProcessorEditor (Synth_OOrt
     addAndMakeVisible(oscComboBox);
     addAndMakeVisible(filterView);
     addAndMakeVisible(modAdsrSliders);
+    
+    // Add Elements to Midi Map Elements
+    // Paint New Elements from New Class
 
     setSize (600, 500);
 }
