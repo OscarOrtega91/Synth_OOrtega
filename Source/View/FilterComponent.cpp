@@ -12,7 +12,7 @@
 #include "FilterComponent.h"
 
 //==============================================================================
-FilterComponent::FilterComponent(juce::AudioProcessorValueTreeState& apvts)
+FilterComponent::FilterComponent(juce::AudioProcessorValueTreeState& apvts, CustomStyle& style): customLooknFeel(style)
 {
     juce::StringArray choices {"Low Pass", "Band Pass", "High Pass"};
     
@@ -61,7 +61,8 @@ void FilterComponent::setSliderAndLabel(std::unique_ptr<_sliderAttachment>& atta
     
     attachment = std::make_unique<_sliderAttachment>(apvts, idAttachment, slider);
     
-    slider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalDrag);
+    slider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
+    slider.setLookAndFeel(&customLooknFeel);
     slider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 50,  25);
     addAndMakeVisible(slider);
     

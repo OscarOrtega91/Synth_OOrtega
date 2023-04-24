@@ -13,6 +13,7 @@
 #include "View/ADSRComponent.h"
 #include "View/OscComponent.h"
 #include "View/FilterComponent.h"
+#include "View/CustomStyle.h"
 
 //==============================================================================
 /**
@@ -29,6 +30,7 @@ public:
 
 private:
     Synth_OOrtegaAudioProcessor& audioProcessor;
+    CustomStyle customLooknFeel;
 
     
     ADSRComponent adsrSliders;

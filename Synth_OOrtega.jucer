@@ -30,6 +30,8 @@
       <FILE id="g2Va0O" name="OscComponent.cpp" compile="1" resource="0"
             file="Source/View/OscComponent.cpp"/>
       <FILE id="gSCEih" name="OscComponent.h" compile="0" resource="0" file="Source/View/OscComponent.h"/>
+      <FILE id="onmtDo" name="CustomStyle.cpp" compile="1" resource="0" file="Source/View/CustomStyle.cpp"/>
+      <FILE id="oLd7FM" name="CustomStyle.h" compile="0" resource="0" file="Source/View/CustomStyle.h"/>
     </GROUP>
     <GROUP id="{AFBD77BA-440F-692A-C884-EA66F250CFFE}" name="Controller">
       <FILE id="httKRe" name="ADSRController.cpp" compile="1" resource="0"

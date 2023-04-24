@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "CustomStyle.h"
 
 //==============================================================================
 /*
@@ -18,7 +19,7 @@
 class FilterComponent  : public juce::Component
 {
 public:
-    FilterComponent(juce::AudioProcessorValueTreeState& apvts);
+    FilterComponent(juce::AudioProcessorValueTreeState& apvts, CustomStyle& style);
     ~FilterComponent() override;
 
     void paint (juce::Graphics&) override;
@@ -34,6 +35,7 @@ private:
     juce::Slider _cutoffFreqSlider;
     juce::Slider _resonanceSlider;
     
+    CustomStyle &customLooknFeel;
 
     std::unique_ptr<_sliderAttachment> _cutoffFreqAttachment;
     std::unique_ptr<_sliderAttachment> _resonanceAttachment;
