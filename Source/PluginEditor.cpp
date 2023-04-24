@@ -11,7 +11,7 @@
 
 //==============================================================================
 Synth_OOrtegaAudioProcessorEditor::Synth_OOrtegaAudioProcessorEditor (Synth_OOrtegaAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p), adsrSliders(audioProcessor.apvts,"ATTACK", "DECAY", "RELEASE", "SUSTAIN" ), oscComboBox(audioProcessor.apvts), filterView(audioProcessor.apvts),
+    : AudioProcessorEditor (&p), audioProcessor (p), adsrSliders(audioProcessor.apvts,"ATTACK", "DECAY", "RELEASE", "SUSTAIN" ), oscComboBox(audioProcessor.apvts,customLooknFeel), filterView(audioProcessor.apvts,customLooknFeel),
         modAdsrSliders(audioProcessor.apvts,"MODATTACK", "MODDECAY", "MODRELEASE" ,"MODSUSTAIN")
 {
 
@@ -19,6 +19,11 @@ Synth_OOrtegaAudioProcessorEditor::Synth_OOrtegaAudioProcessorEditor (Synth_OOrt
     addAndMakeVisible(oscComboBox);
     addAndMakeVisible(filterView);
     addAndMakeVisible(modAdsrSliders);
+    
+    // Add Elements to Midi Map Elements
+    // Paint New Elements from New Class
+    // Clean git files to dont push the builds
+    
 
     setSize (600, 500);
 }

@@ -12,7 +12,8 @@
 #include "OscComponent.h"
 
 //==============================================================================
-OscComponent::OscComponent(juce::AudioProcessorValueTreeState& apvts)
+OscComponent::OscComponent(juce::AudioProcessorValueTreeState& apvts,CustomStyle& style):
+customLooknFeel(style)
 {
     juce::StringArray choices {"Sine", "Saw", "Square"};
     
@@ -70,8 +71,10 @@ void OscComponent::setSliderAndLabel(std::unique_ptr<_sliderAttachment>& attachm
     
     attachment = std::make_unique<_sliderAttachment>(apvts, idAttachment, slider);
     
-    slider.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalDrag);
+    slider.setSliderStyle(juce::Slider::SliderStyle::RotaryVerticalDrag);
     slider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 50,  25);
+    slider.setLookAndFeel(&customLooknFeel);
+    slider.setMouseDragSensitivity(50);
     addAndMakeVisible(slider);
     
     label.setColour(juce::Label::ColourIds::textColourId, juce::Colours::white);

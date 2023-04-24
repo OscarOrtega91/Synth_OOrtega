@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "CustomStyle.h"
 
 //==============================================================================
 /*
@@ -18,7 +19,7 @@
 class OscComponent  : public juce::Component
 {
 public:
-    OscComponent(juce::AudioProcessorValueTreeState& apvts);
+    OscComponent(juce::AudioProcessorValueTreeState& apvts, CustomStyle& style);
     ~OscComponent() override;
 
     void paint (juce::Graphics&) override;
@@ -41,6 +42,7 @@ private:
     juce::Label _fmDepthLabel{ "FMDEPTH","FM Depth"};
     juce::Label _oscLabel{ "OSC","Oscillator"};
     juce::Label _waveTypeLabel{ "WAVETYP","Wave Type"};
+    CustomStyle &customLooknFeel;
 
     void setSliderAndLabel(std::unique_ptr<_sliderAttachment>& attachment,juce::Slider& slider,  juce::AudioProcessorValueTreeState& apvts, juce::String idAttachment, juce::Label& label);
     
