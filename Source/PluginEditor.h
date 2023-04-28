@@ -39,6 +39,8 @@ private:
     FilterComponent filterView;
     ADSRComponent modAdsrSliders;
     
+    juce::MidiKeyboardComponent _midiKeyboard;
+    
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Synth_OOrtegaAudioProcessorEditor)
 };
