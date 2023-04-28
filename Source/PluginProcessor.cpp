@@ -85,6 +85,11 @@ void Synth_OOrtegaAudioProcessor::setCurrentProgram (int index)
 {
 }
 
+
+juce::MidiKeyboardState& Synth_OOrtegaAudioProcessor::getKeyboardState(){
+    return _keyboardState;
+}
+
 const juce::String Synth_OOrtegaAudioProcessor::getProgramName (int index)
 {
     return {};
@@ -108,12 +113,15 @@ void Synth_OOrtegaAudioProcessor::prepareToPlay (double sampleRate, int samplesP
         }
     }
     
+    _keyboardState.reset();
+    
 }
 
 void Synth_OOrtegaAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
+    _keyboardState.reset();
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -148,8 +156,7 @@ void Synth_OOrtegaAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // Add MIDI Keyboard Default
-    // Send Data to Processing
+
     
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
@@ -159,6 +166,10 @@ void Synth_OOrtegaAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer
     // this code if your algorithm always overwrites all the output channels.
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
+    
+    
+    // Add MIDI Keyboard Default
+    // Send Data to Processing
     
     for (int i=0; i< synth.getNumVoices();i++)
     {
@@ -198,6 +209,9 @@ void Synth_OOrtegaAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer
         }
     }
 
+    //Pass incoming MIDI messages coming from the screen keys and add it to the buffer before processing
+    auto numSamples = buffer.getNumSamples();
+    _keyboardState.processNextMidiBuffer(midiMessages, 0, numSamples, true);
 
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
     

@@ -54,10 +54,14 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
     juce::AudioProcessorValueTreeState apvts;
+    juce::MidiKeyboardState& getKeyboardState();
+protected:
+    juce::MidiKeyboardState _keyboardState;
 
 private:
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     juce::Synthesiser synth;
+    
 
     
     //==============================================================================
